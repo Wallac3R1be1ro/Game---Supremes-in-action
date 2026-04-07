@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://cipdurp60sn48"]
+
+[ext_resource type="PackedScene" uid="uid://cuoh6uhoh6tvu" path="res://player/Player.tscn" id="1_41eca"]
+
+[sub_resource type="Environment" id="Environment_ll6t2"]
+background_mode = 2
+ambient_light_color = Color(1, 1, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_to1rx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hnone"]
+
+[node name="Level-1" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ll6t2")
+
+[node name="ponte" type="MeshInstance3D" parent="."]
+transform = Transform3D(18.6359, 0, 0, 0, 1, 0, 0, 0, 5.62387, 0, 0, 0)
+mesh = SubResource("BoxMesh_to1rx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ponte"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ponte/StaticBody3D"]
+shape = SubResource("BoxShape3D_hnone")
+
+[node name="ponte2" type="MeshInstance3D" parent="."]
+transform = Transform3D(18.6359, 0, 0, 0, 1, 0, 0, 0, 5.62387, 21.3674, 0, 0)
+mesh = SubResource("BoxMesh_to1rx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ponte2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ponte2/StaticBody3D"]
+shape = SubResource("BoxShape3D_hnone")
+
+[node name="ponte3" type="MeshInstance3D" parent="."]
+transform = Transform3D(18.6359, 0, 0, 0, 1, 0, 0, 0, 5.62387, 42.1416, 0, 0)
+mesh = SubResource("BoxMesh_to1rx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ponte3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ponte3/StaticBody3D"]
+shape = SubResource("BoxShape3D_hnone")
+
+[node name="Player" parent="." instance=ExtResource("1_41eca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4706, 1.5, -0.182848)

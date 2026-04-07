@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://cuoh6uhoh6tvu"]
+
+[ext_resource type="Script" path="res://player/player.gd" id="1_327i4"]
+[ext_resource type="Script" path="res://player/camera.gd" id="2_1f5nq"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lt3iv"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_phm44"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iyblp"]
+albedo_color = Color(0.773578, 0, 0.267392, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r6wy4"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_4ugva"]
+
+[node name="Player" type="Node3D"]
+
+[node name="Player" type="CharacterBody3D" parent="."]
+script = ExtResource("1_327i4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+shape = SubResource("CapsuleShape3D_lt3iv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
+mesh = SubResource("CapsuleMesh_phm44")
+surface_material_override/0 = SubResource("StandardMaterial3D_iyblp")
+
+[node name="Camera3D" type="Camera3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 10)
+script = ExtResource("2_1f5nq")
+
+[node name="Floor" type="CharacterBody3D" parent="."]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+visible = false
+shape = SubResource("BoxShape3D_r6wy4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+visible = false
+mesh = SubResource("BoxMesh_4ugva")
