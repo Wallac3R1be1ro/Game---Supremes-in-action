@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcjwee78085cl"]
+
+[ext_resource type="PackedScene" uid="uid://drsykfqah7ool" path="res://player/Player/walking.fbx" id="1_gcy74"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_orgvd"]
+radius = 0.01
+height = 0.0821132
+
+[node name="Corpo" type="Node3D"]
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 0, 0, 0)
+
+[node name="walking" parent="." instance=ExtResource("1_gcy74")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="walking/corpo_Cube_001" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="walking/corpo_Cube_001/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0421276, 0)
+shape = SubResource("CapsuleShape3D_orgvd")
+
+[node name="Skeleton3D" parent="walking" index="1"]
+bones/0/position = Vector3(0.00111494, 0.0395415, -0.000532818)
+bones/0/rotation = Quaternion(0.0739615, -0.667936, -0.0128791, 0.740422)
+bones/1/rotation = Quaternion(0.00445937, 0.0117255, -0.044681, 0.998923)
+bones/2/rotation = Quaternion(-0.0167375, 0.0216332, -0.0936364, 0.995231)
+bones/3/rotation = Quaternion(-0.0166316, 0.021683, -0.0936429, 0.995231)
+bones/4/rotation = Quaternion(-0.00736266, -0.0178529, 0.0343486, 0.999223)
+bones/5/rotation = Quaternion(-0.00611138, -0.0940183, 0.166465, 0.981536)
+bones/7/rotation = Quaternion(-0.251173, -0.00617351, -0.011333, 0.967856)
+bones/8/rotation = Quaternion(-0.160647, -0.547599, 0.796283, -0.200652)
+bones/9/rotation = Quaternion(0.281995, -0.648502, 0.282977, 0.647957)
+bones/11/rotation = Quaternion(0.283491, 0.0297094, -0.0196265, 0.958314)
+bones/12/rotation = Quaternion(0.785016, 0.205201, -0.122699, 0.571479)
+bones/13/rotation = Quaternion(0.167501, 0.685375, -0.167556, 0.68857)
+bones/15/rotation = Quaternion(0.0524193, 0.00799849, 0.953471, -0.296784)
+bones/16/rotation = Quaternion(0.00258869, -0.00291405, -0.619924, 0.784652)
+bones/17/rotation = Quaternion(0.549896, -0.457509, 0.542687, 0.440216)
+bones/18/rotation = Quaternion(0.172933, -0.0209072, -0.00855372, 0.984675)
+bones/20/rotation = Quaternion(-0.067536, 0.0844781, 0.969873, -0.218286)
+bones/21/rotation = Quaternion(0.0233135, 0.0617957, -0.434783, 0.89811)
+bones/22/rotation = Quaternion(0.531404, -0.388716, 0.600807, 0.453367)
+bones/23/rotation = Quaternion(0.137672, 0.000962308, 0.00692319, 0.990453)
+
+[editable path="walking"]

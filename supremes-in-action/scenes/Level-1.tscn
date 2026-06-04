@@ -16,7 +16,7 @@ ambient_light_color = Color(1, 1, 1, 1)
 environment = SubResource("Environment_ll6t2")
 
 [node name="ponte" type="MeshInstance3D" parent="."]
-transform = Transform3D(18.6359, 0, 0, 0, 1, 0, 0, 0, 5.62387, 0, 0, 0)
+transform = Transform3D(18.6359, 0, 0, 0, 1, 0, 0, 0, 11.7837, 0, 0, 2.77808)
 mesh = SubResource("BoxMesh_to1rx")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="ponte"]
@@ -25,7 +25,7 @@ mesh = SubResource("BoxMesh_to1rx")
 shape = SubResource("BoxShape3D_hnone")
 
 [node name="ponte2" type="MeshInstance3D" parent="."]
-transform = Transform3D(18.6359, 0, 0, 0, 1, 0, 0, 0, 5.62387, 21.3674, 0, 0)
+transform = Transform3D(18.6359, 0, 0, 0, 1, 0, 0, 0, 11.7837, 21.3674, 0, 2.77808)
 mesh = SubResource("BoxMesh_to1rx")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="ponte2"]
@@ -34,7 +34,7 @@ mesh = SubResource("BoxMesh_to1rx")
 shape = SubResource("BoxShape3D_hnone")
 
 [node name="ponte3" type="MeshInstance3D" parent="."]
-transform = Transform3D(18.6359, 0, 0, 0, 1, 0, 0, 0, 5.62387, 42.1416, 0, 0)
+transform = Transform3D(18.6359, 0, 0, 0, 1, 0, 0, 0, 11.7837, 42.1416, 0, 2.77808)
 mesh = SubResource("BoxMesh_to1rx")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="ponte3"]

@@ -1,14 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cuoh6uhoh6tvu"]
+[gd_scene load_steps=7 format=3 uid="uid://cuoh6uhoh6tvu"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_327i4"]
 [ext_resource type="Script" path="res://player/camera.gd" id="2_1f5nq"]
+[ext_resource type="PackedScene" uid="uid://dcjwee78085cl" path="res://player/Player-modelo3D.tscn" id="2_jas6w"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lt3iv"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_phm44"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iyblp"]
-albedo_color = Color(0.773578, 0, 0.267392, 1)
+[sub_resource type="BoxShape3D" id="BoxShape3D_eagan"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r6wy4"]
 
@@ -19,12 +15,12 @@ albedo_color = Color(0.773578, 0, 0.267392, 1)
 [node name="Player" type="CharacterBody3D" parent="."]
 script = ExtResource("1_327i4")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
-shape = SubResource("CapsuleShape3D_lt3iv")
+[node name="Corpo" parent="Player" instance=ExtResource("2_jas6w")]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
-mesh = SubResource("CapsuleMesh_phm44")
-surface_material_override/0 = SubResource("StandardMaterial3D_iyblp")
+[node name="StaticBody3D" type="StaticBody3D" parent="Player/Corpo"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/Corpo/StaticBody3D"]
+shape = SubResource("BoxShape3D_eagan")
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 10)
@@ -40,3 +36,6 @@ shape = SubResource("BoxShape3D_r6wy4")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
 visible = false
 mesh = SubResource("BoxMesh_4ugva")
+
+[editable path="Player/Corpo"]
+[editable path="Player/Corpo/walking"]
